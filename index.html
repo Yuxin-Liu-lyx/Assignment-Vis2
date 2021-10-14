@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Australia Revenue</title>
   <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+  
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- CSS file -->
   <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
@@ -14,60 +17,104 @@
 </head>
 <body>
 
- <div class="page">
 
-   <!-- pure grid group -->
-    <div class="pure-g">
-      <div class="pure-u-1-1">
-        <h1>Map of Australia </h1>
-            <div id="vis1" class="vis-container"></div>
-      </div>
+<div class="page">
+
+  <!-- pure grid group -->
+  <div class="pure-g">
+    <div class="pure-u-1-1">
+      <h1 style="text-align:center;">Domestic Flights in Australia</h1>
+      <p style="text-align:center;">This is a dashboard of domestic flights in Australia in June 2019. Designed by Xinyi Wu.</p>
     </div>
-  <!-- end pure grid group -->
-
-    <!-- pure grid group -->
-    <div class="pure-g">
-        <div class="pure-u-1-1">
-          <div class="description description-left">
-            <h2>Interactive Bubble Plot</h2>
-          </div>
-        </div>
-        <div class="pure-u-1-1">
-          <div id="vis2" class="vis-container"></div>
-        </div>
-    </div>
-    <!-- end pure grid group -->
-
-    <!-- pure grid group -->
-    <div class="pure-g">
-      <div class="pure-u-1-1">
-        <div class="description description-left">
-          <h2>Interactive Box Plot</h2>
-        </div>
-      </div>
-      <div class="pure-u-1-1">
-        <div id="vis3" class="vis-container"></div>
-      </div>
   </div>
-  <!-- end pure grid group -->
-    <br>
+<!-- end pure grid group -->
 
-    <hr class="hr3">
+  <!-- pure grid group -->
+  <div class="pure-g">
+    <div class="pure-u-1-3">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="description description-left">
+        <h2>Routes and Passengers of Flights</h2>
+        <p>On the right is a map of Australia. Hover on a departure city and the routes will emerge. The symbol size in this map is based on the number of passengers.</p> 
+        <p>As can be seen from the map, Brisbane has the largest number of passengers and the largest number of domestic routes. This suggests that Brisbane is a popular departure city during this period.</p>
+      </div>
+    </div>
+    <div class="pure-u-2-3">
+      <div id="vis1" class="vis-container"></div>
+    </div>
+</div>
+<!-- end pure grid group -->
 
+  <!-- pure grid group -->
+  <div class="pure-g">
+    <div class="pure-u-2-3">
+      <div id="vis2"  class="vis-container"></div>
+    </div>
+    <div class="pure-u-1-3">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="description description-right">
+        <h2>Number of Trips, Loading factor and Passengers</h2>
+        <p>This bubble plot looks closely at the data of domestic flights in June, 2019. Load factor measures the percentage of available seating capacity that has been filled with passengers. A high load factor is preferred over a low load factor.</p>
+        <p>The departure city with the highest loading factor is Darwin, which is 83.53%. However, it has a relatively small number of trips.</p>
+      </div>
+    </div>
   
 </div>
- 
+<!-- end pure grid group -->
+<br>
+<br>
+<br>
+
+<!-- pure grid group -->
+<div class="pure-g">
+  <div class="pure-u-1-3">
+    <div class="description description-left">
+      <h2>Comparison of Flights from 2018 to 2020</h2>
+      <p>In 2020, the lockdown in Australia took a heavy toll on the domestic airline industry. As can be seen from the chart on the left, the passengers of domestic flights decreased until April.</p>
+      <p>Similarly, the close of national border took a heavy toll on the number of international flights, which is shown in the chart on the right.</p>
+    </div>
+  </div>
+  <div class="pure-u-1-3">
+    <div id="vis3"  class="vis-container"></div>
+  </div>
+
+</div>
+<!-- end pure grid group -->
+
+  </div> <!-- end page -->
+   
 <script type="text/javascript">
   var specVis1 = "Aus_choropleth_map.vg.json";
   var specVis2= "industry.vg.json";
-  var specVis3= "boxplot-revenue.vg.json";
+  var specVis3 = "boxplot-revenue.vg.json";
 
-  vegaEmbed('#vis1', specVis1);
-  
-  vegaEmbed('#vis2', specVis2);
 
-  vegaEmbed('#vis3', specVis3);
+
+  vegaEmbed('#vis1', specVis1, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
   
+   vegaEmbed('#vis2', specVis2, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis3', specVis3, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+
 
 </script>
 </body>

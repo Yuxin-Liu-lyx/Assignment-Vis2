@@ -1,26 +1,15 @@
-.vis-container {
-    width: 100%;
+body{
+    max-width: 1800px;
+    margin: auto;
+    left: 1%;
+    right: 1%;
+    position: absolute;
+	background-color: #f5f5f5;
 }
-
-html,
-body {
-    max-width: 100%;
-    overflow-x: hidden;
-    overflow-y: hidden;
-}
-
 .page {
-    width: 100%;
-    background-color: white;
+	left:1%;
+	right:1%;
     margin: auto;
     padding: 50px;
     padding-top: 10px;
-    font-family: 'Source Sans Pro', sans-serif;
-}
-
-.hr3 {
-    border: 0;
-    height: 2px;
-    background-image: linear-gradient(to right, transparent, #DDD, transparent);
-    padding-top: 5px;
 }

@@ -1,97 +1,31 @@
-* {
-  margin: 0;
-  padding: 0;
-  max-width: 100%;
-  scroll-behavior: smooth;
-}
-
-img:hover {
-  opacity: 0.7;
-}
-
-#counter {
-  margin-left: 30px;
-}
-
-.chartContainer {
-  margin-left: 50px;
-  margin-top: 0px;
-  margin-right: 50px;
-}
-
-img {
-  width: 170px;
-  height: 170px;
-}
-
-body {
-  background-color: #a8c0ce;
-  border: none;
-  padding: 0 !important;
-  /*optional*/
-  font-family: arial, sans-serif;
-  /*input has OS specific font-family*/
-  cursor: pointer;
-}
-
-h1 {
-  font-size: 100px;
-  color: rgb(0, 0, 0);
-  text-align: center;
-}
-
-.pure-u-1 {
-  font-size: 17px;
-  margin-left: 0%;
-  color: rgb(0, 0, 0);
-}
-
-.pure-u-3-8 {
-  margin-top: 2%;
-}
-
-.pure-u-2-5 {
-  margin-left: 0%;
-}
-
-.pure-u-3-5 {
-  margin-left: 0%;
-  padding-bottom: 0%;
-}
-
-.pure-u-2-5 {
-  margin-right: 0%;
-  /*border-style: solid;*/
-}
-
-#bump_chart {
-  width: 150%;
-  height: 90%;
-}
-
-#donut_chart {
-  width: 100%;
-  height: 100%;
-}
-
-#aligned {
-  margin-left: 80%;
-  padding-top: 20%;
-}
-
-#test {
-  margin-left: 50%;
-}
-
-#vaccine-text {
-  margin-top: 5%;
-  font-size: 30px;
-  color: #156fa3;
-  font-weight: bold;
-  padding-right: 0%;
-}
-
-p {
-  color: #156fa3;
-}
-
+    h1{
+	  font-weight: 900;
+	}
+	 body{
+	   background-color: #CCCCFF;
+	 }
+	 .page{
+	   width: 1500px;    
+	   background-color: white;   
+	   margin: auto;
+	   padding: 50px;
+	   padding-top: 35px;
+	}
+	.vis-container{
+	  width: 100%;
+	}
+	.description h2, h1{
+	  margin-top:0px;
+	}
+	.description-right {
+	  padding-left: 20px;
+	}
+	.description-left{
+	  padding-right: 20px;
+	}
+	.pure-g{
+	  margin-bottom: 25px;
+	}
+	.small-font{
+		font-size: 14px;
+	}
